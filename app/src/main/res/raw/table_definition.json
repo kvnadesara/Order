@@ -1,0 +1,55 @@
+{
+  "tables": [
+    {
+      "name": "itemmaster",
+      "columns": [
+        {
+          "name": "pk_id",
+          "datatype": "INTEGER PRIMARY KEY AUTOINCREMENT"
+        },
+        {
+          "name": "itemname",
+          "datatype": "TEXT"
+        }
+      ]
+    },
+    {
+      "name": "orders",
+      "columns": [
+        {
+          "name": "pk_id",
+          "datatype": "INTEGER PRIMARY KEY AUTOINCREMENT"
+        },
+        {
+          "name": "ordername",
+          "datatype": "TEXT"
+        },
+        {
+          "name": "orderdate",
+          "datatype": "TEXT"
+        }
+      ]
+    },
+    {
+      "name": "orderitems",
+      "columns": [
+        {
+          "name": "pk_id",
+          "datatype": "INTEGER PRIMARY KEY AUTOINCREMENT"
+        },
+        {
+          "name": "itemname",
+          "datatype": "TEXT"
+        },
+        {
+          "name": "qty",
+          "datatype": "INTEGER"
+        },
+        {
+          "name": "fk_order_id",
+          "datatype": "INTEGER"
+        }
+      ]
+    }
+  ]
+}
