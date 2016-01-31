@@ -9,12 +9,28 @@ import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.sdk.android.order.database.OrderDbHelper;
+import com.sdk.android.order.database.dao.ItemMasterDao;
+import com.sdk.android.order.model.Item;
+
+import org.json.JSONException;
+
+import java.io.IOException;
+
 public class MainActivity extends AppCompatActivity {
 
+    private OrderDbHelper dbHelper;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        try {
+            this.dbHelper = new OrderDbHelper(this);
+        } catch (IOException | JSONException e) {
+            e.printStackTrace();
+        }
+
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -26,6 +42,10 @@ public class MainActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
+
+        Item item = new Item("Tometo Soup");
+        ItemMasterDao itemMasterDao = new ItemMasterDao(this.dbHelper);
+        itemMasterDao.save(item);
     }
 
     @Override

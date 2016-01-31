@@ -16,7 +16,7 @@ class OrderItemDao {
         mDbHelper = dbHelper;
     }
 
-    public void saveOrderItems(ArrayList<ContentValues> orderItems) {
+    public void save(ArrayList<ContentValues> orderItems) {
         
     }
 }

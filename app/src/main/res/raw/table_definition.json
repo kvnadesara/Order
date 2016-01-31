@@ -3,52 +3,25 @@
     {
       "name": "itemmaster",
       "columns": [
-        {
-          "name": "pk_id",
-          "datatype": "INTEGER PRIMARY KEY AUTOINCREMENT"
-        },
-        {
-          "name": "itemname",
-          "datatype": "TEXT"
-        }
+        { "name": "pk_id", "datatype": "INTEGER PRIMARY KEY AUTOINCREMENT"},
+        { "name": "itemname", "datatype": "TEXT" }
       ]
     },
     {
       "name": "orders",
       "columns": [
-        {
-          "name": "pk_id",
-          "datatype": "INTEGER PRIMARY KEY AUTOINCREMENT"
-        },
-        {
-          "name": "ordername",
-          "datatype": "TEXT"
-        },
-        {
-          "name": "orderdate",
-          "datatype": "TEXT"
-        }
+        {"name": "pk_id", "datatype": "INTEGER PRIMARY KEY AUTOINCREMENT"},
+        {"name": "ordername", "datatype": "TEXT"},
+        {"name": "orderdate", "datatype": "TEXT"}
       ]
     },
     {
       "name": "orderitems",
       "columns": [
-        {
-          "name": "pk_id",
-          "datatype": "INTEGER PRIMARY KEY AUTOINCREMENT"
-        },
-        {
-          "name": "itemname",
-          "datatype": "TEXT"
-        },
-        {
-          "name": "qty",
-          "datatype": "INTEGER"
-        },
-        {
-          "name": "fk_order_id",
-          "datatype": "INTEGER"
-        }
+        {"name": "pk_id", "datatype": "INTEGER PRIMARY KEY AUTOINCREMENT"},
+        {"name": "fk_order_id", "datatype": "INTEGER"},
+        {"name": "itemname", "datatype": "TEXT"},
+        {"name": "qty", "datatype": "INTEGER"}
       ]
     }
   ]

@@ -29,14 +29,12 @@ public class JsonToQuery {
 
     public String getCreateTablesQuery() throws IOException, JSONException {
         JSONArray tables = mTableDef.getJSONArray("tables");
-        String script = prepareCreateTableScript(tables);
-        return script;
+        return prepareCreateTableScript(tables);
     }
 
     public String getDeleteTablesQuery() throws JSONException {
         JSONArray tables = mTableDef.getJSONArray("tables");
-        String script = prepareDeleteTableScript(tables);
-        return script;
+        return prepareDeleteTableScript(tables);
     }
 
     private JSONObject readJsonFile(Resources res, int jsonFileResId) throws IOException, JSONException {
@@ -44,8 +42,7 @@ public class JsonToQuery {
         byte[] b = new byte[in_s.available()];
         in_s.read(b);
         String strJson = new String(b);
-        JSONObject json = new JSONObject(strJson);
-        return json;
+        return new JSONObject(strJson);
     }
 
     private String prepareCreateTableScript(JSONArray tables) throws JSONException {
